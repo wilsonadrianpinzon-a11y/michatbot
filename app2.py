@@ -42,10 +42,9 @@ def whatsapp_reply():
         # Validar si la respuesta es correcta
         if incoming_msg in ultima_adivinanza["respuesta"]:
             msg.body("¡Correcto! Muy bien.")
+            ultima_adivinanza = {"pregunta": "", "respuesta": ""}  # Limpiar solo después de la respuesta correcta
         else:
             msg.body("Mmm... no es correcto. Intenta de nuevo o escribe 'adivinanza' para otra.")
-        # Limpiar la adivinanza para evitar repetir
-        ultima_adivinanza = {"pregunta": "", "respuesta": ""}
 
     elif "trabalenguas" in incoming_msg:
         trabalenguas = [
